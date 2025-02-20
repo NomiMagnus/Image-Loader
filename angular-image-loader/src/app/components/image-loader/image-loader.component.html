@@ -1,0 +1,16 @@
+<div class="content-container">
+    <button mat-fab extended class="button" (click)="fetchImage()"
+        matTooltip="Click here if you want to see an image which loaded from the server">
+        <mat-icon>image</mat-icon>
+        Load Image
+    </button>
+
+    <div class="image-container">
+       
+        <mat-card class="card">
+             @if(imageUrl){<img [src]="imageUrl" alt="Load Image" (error)="onImageError()"/>}
+        </mat-card>
+        
+        @if(isLoading){<mat-spinner class="spinner"></mat-spinner>}
+    </div>
+</div>
